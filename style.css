@@ -1,0 +1,123 @@
+:root {
+    --white: hsl(0, 100%, 100%);
+    --purple100: hsl(275, 100%, 97%);
+    --purple600: hsl(292, 16%, 49%);
+    --purple950: hsl(292, 42%, 14%);
+    --myPurple: hsl(281, 83%, 54%);
+    --myPurpleHover: hsl(281, 83%, 39%);
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("assets/fonts/static/WorkSans-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("assets/fonts/static/WorkSans-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("assets/fonts/static/WorkSans-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--purple100);
+    background-image: url("assets/images/background-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 38rem;
+    height: fit-content;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: clamp(3.438rem, 0.314vw + 3.375rem, 3.75rem);
+    font-weight: 700;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.faq:not(:last-child) {
+    padding-bottom: 2rem;
+    border-bottom: solid 1px var(--purple100);
+}
+
+.question {
+    font-size: clamp(0.875rem, 0.188vw + 0.837rem, 1.063rem);
+    color: var(--purple950);
+    font-weight: 600;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.button:hover .question {
+    color: var(--myPurple);
+    transition: all 0.3s ease;
+}
+
+.button:hover .plus path {
+    fill: var(--myPurpleHover);
+    transition: all 0.3s ease;
+}
+
+.answer {
+    font-size: clamp(0.875rem, 0.188vw + 0.837rem, 1.063rem);
+    color: var(--purple600);
+    font-weight: 400;
+}
+
+.attribution { 
+    font-size: clamp(0.675rem, 0.075vw + 0.66rem, 0.75rem);
+    text-align: center; 
+    margin-block-start: 2rem;
+}
+    
+.attribution a { 
+    color: var(--myPurple); 
+}
