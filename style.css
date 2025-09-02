@@ -43,6 +43,7 @@ body {
     background-size: 100%;
     background-position: top;
     font-family: 'Work Sans', sans-serif;
+    padding: 2rem;
 }
 
 .container {
@@ -50,7 +51,7 @@ body {
     flex-direction: column;
     gap: 2rem;
     background-color: var(--white);
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
     border-radius: 1rem;
     width: 34.2rem;
 }
@@ -74,7 +75,6 @@ body {
 }
 
 .faq:not(:last-child) {
-    padding-bottom: 2rem;
     border-bottom: solid 1px var(--purple100);
 }
 
@@ -111,20 +111,22 @@ body {
     transition: transform 0.3s ease;
 }
 
+.button:hover .minus {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
 .answer {
     font-size: clamp(0.875rem, 0.188vw + 0.837rem, 1.063rem);
     color: var(--purple600);
     font-weight: 400;
-    opacity: 1;
-    pointer-events: all;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
-.answer.hidden {
-    opacity: 0;
-    height: 0;
-    padding: 0 2rem;
-    pointer-events: none;
-    margin-block-start: -2rem;
+.answer.open {
+    margin-block-end: 2rem;
 }
 
 .attribution { 
@@ -134,5 +136,6 @@ body {
 }
     
 .attribution a { 
+    font-weight: 600;
     color: var(--myPurple); 
 }
